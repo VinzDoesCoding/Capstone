@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Order - JIMACA Prints</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #1c1c1c;
+      color: white;
+    }
+    .container {
+      display: flex;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: auto;
+      gap: 2rem;
+    }
+    .top-bar {
+  background-color: #111;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+
+.top-bar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
+  color: white;
+}
+
+.logo {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+   .home-link {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    background-color: #333;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+    }
+
+    .home-link:hover {
+      background-color: #555;
+    }
+    .product-preview {
+      flex: 2;
+      background-color: #2b2b2b;
+      padding: 1rem;
+      border-radius: 20px;
+    }
+    .product-preview img {
+      width: 100%;
+      border-radius: 20px;
+    }
+    .product-options {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .product-option {
+      background-color: #3b3b3b;
+      padding: 0.5rem;
+      border-radius: 15px;
+      text-align: center;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .product-option:hover {
+      background-color: #555;
+    }
+    .product-option img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    .details h2 { margin: 0.5rem 0; }
+    .stars { color: gold; }
+    .buttons {
+      margin-top: 1.5rem;
+      display: flex;
+      gap: 1rem;
+    }
+      #order-options {
+      margin: 1rem 0;
+    } 
+    #order-options label {
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    .buttons button {
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: bold;
+      background-color: white;
+      color: black;
+      transition: background-color 0.3s ease;
+    }
+    .buttons button:hover {
+      background-color: #ddd;
+    }
+    select {
+      padding: 0.5rem;
+      border-radius: 10px;
+      border: none;
+      width: 70%;
+    }
+    @media (max-width: 768px) {
+      .container {
+      flex-direction: column;
+    }
+}
+  </style>
+</head>
+<body>
+
+<header class="top-bar">
+  <div class="top-bar-content">
+    <span class="logo">🖨️ JIMACA Prints</span>
+    <a href="Home.html" class="home-link">Home</a>
+  </div>
+</header>
+
+<div class="container">
+  <div class="product-preview">
+    <img id="product-img" src="tshirt.avif" alt="T-Shirt">
+
+    <div class="details">
+      <h2 id="product-title">T-SHIRT</h2>
+      <p class="stars">★★★★★ 5/5 stars</p>
+      <p id="product-price"><strong>PHP 150.00 - 250.00</strong></p>
+      <p id="product-desc">A plain, simple, yet comfort t-shirt made of 100% cotton for quality prints.</p>
+      <div id="order-options">
+  <label>
+    Quantity:
+    <input type="number" id="quantity" min="1" value="1">
+  </label><br>
+
+  <label>
+    Color:
+    <select id="color">
+      <option>Black</option>
+      <option>White</option>
+      <option>Red</option>
+      <option>Blue</option>
+      <option>Green</option>
+    </select>
+  </label><br>
+
+  <label id="size-label">
+    Size:
+    <select id="size">
+      <option>Small</option>
+      <option>Medium</option>
+      <option>Large</option>
+      <option>XL</option>
+      <option>XXL</option>
+    </select>
+  </label>
+</div>
+
+    <form id="order-form" method="POST" action="admin_dashboard.php">
+  <input type="hidden" name="product" id="input-product">
+  <input type="hidden" name="quantity" id="input-quantity">
+  <input type="hidden" name="color" id="input-color">
+  <input type="hidden" name="size" id="input-size">
+
+  <div class="buttons">
+    <button type="submit">ADD TO CART</button>
+    <button type="button" onclick="uploadDesign()">SEND DESIGN</button>
+  </div>
+</form>
+
+
+
+    </div>
+  </div>
+
+  <div class="product-options">
+    <div class="product-option" onclick="changeProduct('T-SHIRT')">
+      <p>T-SHIRT</p>
+      <img src="tshirt.avif" alt="T-Shirt">
+    </div>
+    <div class="product-option" onclick="changeProduct('CAP')">
+      <p>CAP</p>
+      <img src="cap.avif" alt="Cap">
+    </div>
+    <div class="product-option" onclick="changeProduct('UMBRELLA')">
+      <p>UMBRELLA</p>
+      <img src="umbrella.jpg" alt="Umbrella">
+    </div>
+    <div class="product-option" onclick="changeProduct('SASH')">
+      <p>SASH</p>
+      <img src="sash.webp" alt="Sash">
+    </div>
+    <div class="product-option" onclick="changeProduct('FAN')">
+      <p>Foldable Fan</p>
+      <img src="fan.jpg" alt="Fan">
+    </div>
+  </div>
+</div>
+
+<footer style="background-color: #111; color: white; padding: 60px 20px; display: flex; justify-content: center; align-items: flex-start; flex-wrap: wrap;">
+  <div style="flex: 1; min-width: 250px; padding: 20px;">
+    <h2 style="font-size: 1.8em;">JIMACA<br>Graphics</h2>
+    <p style="margin-top: 10px;">Ready to provide quality prints for your professional brand.</p>
+  </div>
+  <div style="flex: 1; min-width: 250px; padding: 20px;">
+    <h2>Contact us</h2>
+    <p>Somewhere in the Philippines<br>
+    0000-000-0000<br>
+    example@gmail.com</p>
+    <div style="margin-top: 10px;">
+      <a href="#" style="color: white; margin-right: 10px;"><i class="fab fa-facebook"></i></a>
+      <a href="#" style="color: white; margin-right: 10px;"><i class="fab fa-instagram"></i></a>
+      <a href="#" style="color: white;"><i class="fab fa-envelope"></i></a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const products = {
+    "T-SHIRT": { title: "T-SHIRT", image: "tshirt.avif", price: "PHP 150.00 - 250.00", desc: "A plain, simple, yet comfort t-shirt made of 100% cotton for quality prints." },
+    "CAP": { title: "CAP", image: "cap.avif", price: "PHP 80.00 - 150.00", desc: "Classic adjustable cap perfect for embroidery or vinyl print customization." },
+    "UMBRELLA": { title: "UMBRELLA", image: "umbrella.jpg", price: "PHP 200.00 - 350.00", desc: "Strong, waterproof umbrella available in various colors for printing services." },
+    "SASH": { title: "SASH", image: "sash.webp", price: "PHP 50.00 - 100.00", desc: "Smooth satin sash available for custom print, great for events or awards." },
+    "FAN": { title: "FOLDABLE FAN", image: "fan.jpg", price: "PHP 30.00 - 80.00", desc: "Compact foldable fan for giveaways and promotions with custom logo print." }
+  };
+
+  function changeProduct(key) {
+    const product = products[key];
+    document.getElementById('product-title').innerText = product.title;
+    document.getElementById('product-img').src = product.image;
+    document.getElementById('product-price').innerHTML = `<strong>${product.price}</strong>`;
+    document.getElementById('product-desc').innerText = product.desc;
+
+    // Toggle size visibility
+    const sizeLabel = document.getElementById('size-label');
+    sizeLabel.style.display = (key === "T-SHIRT" || key === "CAP") ? "block" : "none";
+  }
+
+  function submitOrder(event) {
+    event.preventDefault();
+
+    const product = document.getElementById("product-title").innerText;
+    const quantity = document.getElementById("quantity").value;
+    const color = document.getElementById("color").value;
+    const sizeSelect = document.getElementById("size");
+    const size = sizeSelect && sizeSelect.style.display !== "none" ? sizeSelect.value : "N/A";
+
+    document.getElementById("input-product").value = product;
+    document.getElementById("input-quantity").value = quantity;
+    document.getElementById("input-color").value = color;
+    document.getElementById("input-size").value = size;
+
+    document.getElementById("order-form").submit();
+  }
+
+  function uploadDesign() {
+    alert("📤 Please send your design to example@gmail.com or upload in the next version.");
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("order-form").addEventListener("submit", submitOrder);
+    document.getElementById("quantity").addEventListener("input", () => {
+      const qty = document.getElementById("quantity");
+      if (qty.value < 1) qty.value = 1;
+    });
+    changeProduct("T-SHIRT"); // Default product on load
+  });
+</script>
+
+
+</body>
+</html>
