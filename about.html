@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us - JIMACA Graphics</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+
+    body {
+      background-image: url('bg.png');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      background-color: #111;
+    }
+
+    section {
+      min-height: 50vh;
+      display: flex;
+      position: relative;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-repeat: no-repeat;
+      padding: 60px 20px;
+    }
+
+    .overlay {
+      background: rgba(0, 0, 0, 0.6);
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: 1;
+    }
+
+    .content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1, h2 {
+      font-size: 2.5em;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 1.4em;
+      margin-bottom: 30px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .crew-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .crew-member {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 150px;
+      text-align: center;
+    }
+
+    .crew-member img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: black;
+      padding: 10px;
+    }
+
+    .crew-member span {
+      margin-top: 10px;
+      font-weight: bold;
+      font-size: 1.1em;
+    }
+
+    .button-link {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 0.5rem 1rem;
+      border-radius: 10px;
+      transition: background-color 0.3s ease;
+    }
+
+    .button-link:hover {
+      background-color: #555;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      justify-items: center;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .social-pill {
+      display: inline-block;
+      color: white;
+      padding: 0.6rem 1.2rem;
+      border-radius: 999px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+      margin: 8px;
+    }
+
+.facebook-pill {
+  background-color: #1877F2;
+}
+.facebook-pill:hover {
+  background-color: #145dbf;
+}
+
+.email-pill {
+  background-color: #b22c2c;
+}
+.email-pill:hover {
+  background-color: #cc3e3e;
+}
+  </style>
+</head>
+<body>
+
+<!-- About Us Section -->
+<section style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('tshirt.jpg'); background-size: cover; background-position: center; padding: 80px 20px; text-align: center; color: white;">
+  <div style="max-width: 800px; margin: 0 auto;">
+    <h1>About JIMACA Graphics</h1>
+    <p style="font-size: 1.4rem;">JIMACA Graphics is a silkscreen printing company registered under Department of Trade and Industry.
+      We are committed to offer good customer services and offer best quality prints on absorbent materials of corporate giveaways and promotional items.
+      We perform as we promised to our clients and bringing glory to God in  giving our best through craftsmanship and artistry.</p>
+  </div>
+</section>
+<br>
+<section style="background-image: url('design1.jpg'); background-size: cover; background-position: center; padding: 50px 20px; position: relative;">
+  <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(0,0,0,0.6); z-index: 0;"></div>
+
+  <div style="position: relative; z-index: 1; max-width: 1200px; margin: auto; text-align: center; color: white;">
+    <h1 style="font-size: 3em; margin-bottom: 10px;">Meet the JIMACA Team</h1>
+    <p style="font-size: 1.2em; margin-bottom: 40px;">We're a group of passionate creatives and printers making your custom designs come to life.</p>
+
+    <div class="team-grid">
+      
+      <!-- Member Card -->
+      <div style="background: rgba(0, 0, 0, 0.712); border-radius: 12px; padding: 20px; width: 250px; text-align: center;">
+        <img src="1.png" alt="Jim" style="width: 100px; height: 100px; border-radius: 50%; border: 3px solid white; margin-bottom: 10px;">
+        <h3>Jimmy M. Cabales</h3>
+        <p style="opacity: 0.8;">Owner</p>
+      </div>
+
+      <div style="background: rgba(0, 0, 0, 0.712); border-radius: 12px; padding: 20px; width: 250px; text-align: center;">
+        <img src="6.png" alt="Vinze" style="width: 100px; height: 100px; border-radius: 50%; border: 3px solid white; margin-bottom: 10px;">
+        <h3>James Dacutan</h3>
+        <p style="opacity: 0.8;">Helper</p>
+      </div>
+
+      <div style="background: rgba(0, 0, 0, 0.712); border-radius: 12px; padding: 20px; width: 250px; text-align: center;">
+        <img src="5.png" alt="Charlene" style="width: 100px; height: 100px; border-radius: 50%; border: 3px solid white; margin-bottom: 10px;">
+        <h3>Ronald Iso</h3>
+        <p style="opacity: 0.8;">Senior Printer</p>
+      </div>
+
+      <div style="background: rgba(0, 0, 0, 0.712); border-radius: 12px; padding: 20px; width: 250px; text-align: center;">
+        <img src="7.png" alt="Joseph" style="width: 100px; height: 100px; border-radius: 50%; border: 3px solid white; margin-bottom: 10px;">
+        <h3>Adrian Polidario</h3>
+        <p style="opacity: 0.8;">Quality Controller</p>
+      </div>
+
+      <div style="background: rgba(0, 0, 0, 0.712); border-radius: 12px; padding: 20px; width: 250px; text-align: center;">
+        <img src="2.png" alt="Angelica" style="width: 100px; height: 100px; border-radius: 50%; border: 3px solid white; margin-bottom: 10px;">
+        <h3>Agustino Raboy</h3>
+        <p style="opacity: 0.8;">Helper/Apprentice</p>
+      </div>
+
+      <div style="background: rgba(0, 0, 0, 0.712); border-radius: 12px; padding: 20px; width: 250px; text-align: center;">
+        <img src="4.png" alt="Mark" style="width: 100px; height: 100px; border-radius: 50%; border: 3px solid white; margin-bottom: 10px;">
+        <h3>Cristobal Reyes</h3>
+        <p style="opacity: 0.8;">Printer/Stencil Maker</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+<br>
+<!-- Footer Section -->
+<footer style="color: white; padding: 60px 20px; display: flex; text-align: center; justify-content: center; align-items: flex-start; flex-wrap: wrap;">
+  <div style="min-width: 150px; padding: 10px;">    
+    <h3 style="font-size: 2.8em;">JIMACA Graphics</h3><br>
+    <p style="margin-top: 10px;">Ready to provide quality prints for your professional brand.</p>
+    <h3 style="font-size: 2.8em;">Contact us</h3><br>
+    <p> 📍 ADDRESS: 8338 Arayat Street, Unit 3 back of Fortuna Bldg, <br>Justina Village, Brgy. San Isidro, Parañaque, Philippines<br>
+    📞 09193542867 ☎️ 8715-9506</p>
+    <div style="margin-top: 10px;">
+      <a href="https://www.facebook.com/SilkcreenPrinting" target="_blank" class="social-pill facebook-pill">
+       <i class="fab fa-facebook-f"></i> Visit JIMACA on Facebook
+      </a>
+      <a href="mailto:jcabales2002@yahoo.com" class="social-pill email-pill">
+      ✉️ jcabales2002@yahoo.com
+      </a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
